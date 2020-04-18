@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,input[type=text],input[type=button],button,::placeholder{
+    font-family: 'Poppins', sans-serif;
+}
+input[type=button],button{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+.head{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 800;
+    padding: 20px;
+    letter-spacing: 1.6px;
+}
+.input_con_artist{
+    text-align: center;
+}
+.artist_name_search{
+    width: 500px;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+.search_artist{
+    padding: 10px;
+    background: #253f66;
+    font-weight: 700;
+    outline: none;
+    text-transform: uppercase;
+    border: none;
+    color: white;
+}
+.empty {
+    border: 1px solid red;
+    animation: empty 0.4s linear;
+}
+@keyframes empty {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(3px);
+    }
+    75%{
+        transform: translateX(-3px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.empty::placeholder {
+    color: red;
+}
+.artist_results,.artist_head,.album_head,.track_head{
+    text-align: center;
+    font-size: 23px;
+    background: #253f66;
+    color: white;
+    font-weight: 700;
+    padding: 5px 0;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+    box-shadow: 0px -1px 5px rgba(0,0,0,.6);
+}
+.artist_head,.album_head,.track_head{
+    margin-top: 0;
+}
+.artist_names_con{
+    width: 700px;
+    margin: 0 auto;
+    box-shadow: 0px 1px 5px rgba(0,0,0,.6);
+    max-height: 500px;
+    overflow-y: auto;
+}
+.artist,.track{
+    padding: 10px;
+    border-bottom: 1px #ccc solid;
+}
+.artist_r{
+    margin-right: 10px;
+}
+.artist_name{
+    font-size: 20px;
+}
+
+.artist_names_con::-webkit-scrollbar {
+    width: 5px;
+}
+.artist_names_con:-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+.artist_names_con::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+.artist_names_con::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.album,.track,.track_lyric p{
+    padding: 10px;
+    border-bottom: 1px #ccc solid;
+}
+.track_lyric p{
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+}
+.album span,.track span{
+    margin: 0 10px;
+    color: #737476;
+}
+.album_con,.tracks_con,.track_lyric{
+    max-height: 700px;
+}
+.album_name,.track_name{
+    margin: 10px;
+    font-size: 18px;
+}
+.album_name a,.track_name a{
+    color: #253f66;
+}
+.home{
+    padding: 15px;
+}
+.home a{
+    padding: 10px;
+    border: 1.5px #253f66 solid;
+    border-radius: 3px;
+    color: #253f66;
+
+}
