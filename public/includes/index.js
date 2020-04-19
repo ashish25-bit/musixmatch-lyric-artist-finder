@@ -1,34 +1,48 @@
-const name = document.querySelector('.artist_name_search')
+const type = document.querySelectorAll('.radio')
 let api = 'YOUR_API_KEY'
-const con = document.querySelector('.artist_names_con')
+const key = document.querySelector('.artist_name_search')
+let con = document.querySelector('.results_con')
+
 {
     $('.artist_results').hide()
 }
 
 document.querySelector('.search_artist').addEventListener('click' , () => {
-    name.classList.remove('empty')
-    if(name.value != '') {
-        $('.artist_results').show()
-        $('.artist_results').text(`Searching For : ${name.value}`)
+    if(key.value != '') {
+        type[1].checked ? apiCall(key.value,'q_artist' , 100) : apiCall(key.value,'q_track' , 10)
+    }
+    else key.classList.add('empty')
+})
 
-        fetch(`http://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/artist.search?q_artist=${name.value}&apikey=${api}&page_size=10`)
-            .then((response) => {
-                return response.json()
-            })
-            .then((data) => {
-                artists = data['message']['body']['artist_list']
-                artists.forEach(artist => {
+
+function apiCall(name, type, size) {
+    key.value = ''
+    $('.artist_results').show()
+    $('.artist_results').text(`Searching For : ${name}`)
+
+    url = `http://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?${type}=${name}&s_artist_rating=desc&page_size=${size}&apikey=${api}`
+    
+    console.log(url)
+
+    fetch(url)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            tracks = data['message']['body']['track_list']
+            con.innerHTML = ('')
+            if(tracks.length) {
+                tracks.forEach(track => {
                     div = document.createElement('div')
-                    div.classList.add('artist')
-                    r  = `<p class="artist_name">${artist['artist']['artist_name']}</p>`
-                    r += `<p class="artist_rating"><a class="artist_r" href='/artist/${artist['artist']['artist_name']}/${artist['artist']['artist_id']}'>Album</a> Rating : ${artist['artist']['artist_rating']}</p>`                
+                    div.classList.add('track')
+                    r  = `<div class="track_name"><a href="/track/${track['track']['artist_name']}/${track['track']['track_name']}">${track['track']['track_name']}</a></div>`
+                    r += `<p class="track_artist_name">Artist : ${track['track']['artist_name']}</p>`
+                    r += `<p class="track_artist_album">Album : ${track['track']['album_name']}</p>`
+                    r += `<span>Rating : ${track['track']['track_rating']}</span>`
                     div.innerHTML = r
                     con.appendChild(div)
                 })
-            })
-        
-        name.value = ''
-    }
-    else 
-        name.classList.add('empty')
-})
+            }
+            else con.innerText('No Results')
+        })
+}

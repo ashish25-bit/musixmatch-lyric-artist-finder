@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>MusixMatch API</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/includes/style.css">
+    <link rel="stylesheet" href="./includes/style.css">
 </head>
 <body>
     <div class="main">
@@ -13,31 +13,17 @@
             <a href='/'>Home</a>
             <a href='/artist'>Search Artist</a>
         </div>
-        <p class="head">LyricFinder By MusixMatch API</p>
-        <div class="radio_con">
-            <label>Search By Track Name
-                <input type='radio' class='radio' name='search' checked>
-                <span class="checkmark"></span>
-            </label>
-            <label>Search By Artist Name
-                <input type='radio' class='radio' name='search'>
-                <span class="checkmark"></span>
-            </label>
-        </div>
-
+        <p class="head">ArtistFinder By MusixMatch API</p>
         <div class="input_con_artist">
             <input type="text" class="artist_name_search" placeholder="Enter name of the artist">   
             <input type="button" value="Search" class="search_artist">
         </div>
-
         <div class="artist_results_con">
             <div class="artist_results"></div>
-            <div class="results_con"></div>
+            <div class="artist_names_con"></div>
         </div>
-
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script src="./includes/index.js"></script>
+    <script src="./includes/artist_search.js"></script>
 </body>
 </html>

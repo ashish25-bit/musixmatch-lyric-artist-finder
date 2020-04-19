@@ -14,18 +14,23 @@
             return response.json()
         })
         .then((data) => {
-            albums = data['message']['body']['album_list']
+            document.querySelector('.album_con').innerHTML = ''
+            if(data['message']['header']['status_code'] == 200) {
+                albums = data['message']['body']['album_list']
 
-            albums.forEach(album => {
-                div = document.createElement('div')
-                div.classList.add('album')
-                r  = `<div class="album_name">
-                <a href='/album/${array[4].trim()}/${album['album']['album_id']}'>${album['album']['album_name']}</a>
-                </div>`
-                r += `<span>Release Date : ${album['album']['album_release_date']}</span>
-                <span>Rating : ${album['album']['album_rating']}</span>`
-                div.innerHTML = r
-                document.querySelector('.album_con').appendChild(div)
-            })
+                albums.forEach(album => {
+                    div = document.createElement('div')
+                    div.classList.add('album')
+                    r  = `<div class="album_name">
+                    <a href='/album/${array[4].trim()}/${album['album']['album_id']}'>${album['album']['album_name']}</a>
+                    </div>`
+                    r += `<span>Release Date : ${album['album']['album_release_date']}</span>
+                    <span>Rating : ${album['album']['album_rating']}</span>`
+                    div.innerHTML = r
+                    document.querySelector('.album_con').appendChild(div)
+                })
+            }
+            else 
+                document.querySelector('.album_con').innerHTML = 'No Results'
         })
 }

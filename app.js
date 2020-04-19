@@ -7,7 +7,8 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 
 app.get('/' , (req,res) => {
-    res.sendFile('/index.html')
+    //res.sendFile('/index.html')
+    res.sendFile(path.join(__dirname,('public/search.html')))
 })
 
 app.get('/artist/:artist/:id' , (req,res) => {
@@ -20,6 +21,11 @@ app.get('/album/:artist/:id' , (req,res) => {
 
 app.get('/track/:artist/:track' , (req,res) => {
     res.sendFile((path.join(__dirname, 'public/track.html')))
+})
+
+app.get('/artist',(req,res) => {
+    // res.sendFile(path.join(__dirname,('public/search.html')))
+    res.sendFile(path.join(__dirname,('public/artist_search.html')))
 })
 
 const PORT = process.env.PORT || 3000

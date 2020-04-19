@@ -1,0 +1,50 @@
+"body":{
+    "track_list":[
+        {
+            "track":{
+                "track_id":194716701,
+                "track_name":"we're f****d, it's fine",
+                "track_name_translation_list":[],
+                "track_rating":35,
+                "commontrack_id":109157537,
+                "instrumental":0,
+                "explicit":1,
+                "has_lyrics":1,
+                "has_subtitles":1,
+                "has_richsync":0,
+                "num_favourite":1,
+                "album_id":37243254,
+                "album_name":"love is not dying",
+                "artist_id":28863885,
+                "artist_name":"Jeremy Zucker",
+                "track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Jeremy-Zucker\/we-re-f-d-it-s-fine-1?utm_source=application&utm_campaign=api&utm_medium=Individual%3A1409619733891","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Jeremy-Zucker\/we-re-f-d-it-s-fine-1\/edit?utm_source=application&utm_campaign=api&utm_medium=Individual%3A1409619733891","restricted":0,"updated_time":"2020-04-17T03:55:15Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":34,"music_genre_parent_id":0,"music_genre_name":"Music","music_genre_name_extended":"Music","music_genre_vanity":"Music"}}]}}
+        },
+
+
+
+"body":{
+    "track_list":[
+        {
+            "track":{
+                "track_id":161867099,
+                "track_name":"We Will Rock You",
+                "track_name_translation_list":[],
+                "track_rating":87,
+                "commontrack_id":48022238,
+                "instrumental":0,
+                "explicit":0,
+                "has_lyrics":1,
+                "has_subtitles":1,
+                "has_richsync":1,
+                "num_favourite":3982,"album_id":30782812,
+                "album_name":"Greatest Hits",
+                "artist_id":118,
+                "artist_name":"Queen",
+                "track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Queen\/We-Will-Rock-You-1?utm_source=application&utm_campaign=api&utm_medium=Individual%3A1409619733891","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Queen\/We-Will-Rock-You-1\/edit?utm_source=application&utm_campaign=api&utm_medium=Individual%3A1409619733891","restricted":0,"updated_time":"2018-04-08T17:41:39Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":21,"music_genre_parent_id":34,"music_genre_name":"Rock","music_genre_name_extended":"Rock","music_genre_vanity":"Rock"}}]}}
+        },
+
+https://api.musixmatch.com/ws/1.1/track.search?q_track=queen&s_artist_rating=desc&page_size=10&apikey=cdcd78330e64fc5f6e712182f1044c3d
+https://api.musixmatch.com/ws/1.1/track.search?q_artist=queen&s_artist_rating=desc&apikey=cdcd78330e64fc5f6e712182f1044c3d
+
+https://api.musixmatch.com/ws/1.1/track.search?q_artist=queen&s_artist_rating=desc&page_size=100&apikey=cdcd78330e64fc5f6e712182f1044c3d
+https://api.musixmatch.com/ws/1.1/track.search?q_artist=queen&s_artist_rating=desc&page_size=100&apikey=cdcd78330e64fc5f6e712182f1044c3d

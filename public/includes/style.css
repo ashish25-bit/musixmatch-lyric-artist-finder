@@ -77,7 +77,7 @@ a{
 .artist_head,.album_head,.track_head{
     margin-top: 0;
 }
-.artist_names_con{
+.artist_names_con,.results_con{
     width: 700px;
     margin: 0 auto;
     box-shadow: 0px 1px 5px rgba(0,0,0,.6);
@@ -95,16 +95,16 @@ a{
     font-size: 20px;
 }
 
-.artist_names_con::-webkit-scrollbar {
+.artist_names_con::-webkit-scrollbar,.results_con::-webkit-scrollbar{
     width: 5px;
 }
-.artist_names_con:-webkit-scrollbar-track {
+.artist_names_con:-webkit-scrollbar-track,.results_con:-webkit-scrollbar-track{
     background: #f1f1f1; 
 }
-.artist_names_con::-webkit-scrollbar-thumb {
+.artist_names_con::-webkit-scrollbar-thumb,.results_con::-webkit-scrollbar-thumb{
     background: #888; 
 }
-.artist_names_con::-webkit-scrollbar-thumb:hover {
+.artist_names_con::-webkit-scrollbar-thumb:hover,.results_con::-webkit-scrollbar-thumb:hover{
     background: #555; 
 }
 .album,.track,.track_lyric p{
@@ -138,5 +138,52 @@ a{
     border: 1.5px #253f66 solid;
     border-radius: 3px;
     color: #253f66;
+}
+.radio_con{
+    text-align: center;
+    margin-bottom: 20px ;
+}
+.radio_con label{
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+    margin: 0 10px ;
+}
+.radio{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: #aaa;
+    border-radius: 50%;
+}
+.radio_con label .radio:checked ~ .checkmark {
+    background-color: #253f66;
+} 
 
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radio_con label .radio:checked ~ .checkmark:after {
+    display: block;
+}
+.radio_con .checkmark::after{
+    width: 17px;
+    height: 17px;
+    background: #bbb;
+    border-radius: 50%;
+    top: 3.5px;
+    left: 4px;
+}
+.track_artist_name,.track_artist_album{
+    margin-left: 10px;
 }

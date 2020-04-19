@@ -8,14 +8,18 @@
             return response.json()
         })
         .then((data) => {
-            tracks = data['message']['body']['track_list']
-            $('.album_head').text(tracks[0]['track']['album_name'])
-            tracks.forEach(track => {
-                div = document.createElement('div')
-                div.classList.add('track')
-                r = `<div class="track_name"><a href="/track/${array[4].trim()}/${track['track']['track_name']}">${track['track']['track_name']}</a></div><span>Rating : ${track['track']['track_rating']}</span>`
-                div.innerHTML = r
-                document.querySelector('.tracks_con').appendChild(div)
-            })
+            document.querySelector('.tracks_con').innerHTML = ''
+            if(data['message']['header']['status_code'] == 200){ 
+                tracks = data['message']['body']['track_list']
+                $('.album_head').text(tracks[0]['track']['album_name'])
+                tracks.forEach(track => {
+                    div = document.createElement('div')
+                    div.classList.add('track')
+                    r = `<div class="track_name"><a href="/track/${array[4].trim()}/${track['track']['track_name']}">${track['track']['track_name']}</a></div><span>Rating : ${track['track']['track_rating']}</span>`
+                    div.innerHTML = r
+                    document.querySelector('.tracks_con').appendChild(div)
+                })
+            }
+            else document.querySelector('.tracks_con').innerText = 'No Results'
         })
 }
